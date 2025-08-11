@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 import { createBrowserClient } from '@supabase/ssr'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://wnozfsrbbpfdkpzpzppi.supabase.co'
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indub3pmc3JiYnBmZGtwenB6cHBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4ODEyMTIsImV4cCI6MjA3MDQ1NzIxMn0.09g8VFyhez-60_X3ne6yuY0diFD_kPlabsJQREfXkBI'
 
 // For client-side usage
 export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey)
