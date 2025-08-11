@@ -319,8 +319,8 @@ export class ComparisonEngine {
         const scoreKeyA = `${priority}_score` as keyof typeof a.scores
         const scoreKeyB = `${priority}_score` as keyof typeof b.scores
         
-        scoreA += (a.scores?.[scoreKeyA] as number || 0) * weight
-        scoreB += (b.scores?.[scoreKeyB] as number || 0) * weight
+        scoreA += (Number(a.scores?.[scoreKeyA]) || 0) * weight
+        scoreB += (Number(b.scores?.[scoreKeyB]) || 0) * weight
       })
 
       return scoreB - scoreA

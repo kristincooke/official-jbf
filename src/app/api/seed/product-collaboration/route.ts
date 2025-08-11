@@ -15,7 +15,11 @@ export async function POST(request: NextRequest) {
     // For demo purposes, we'll allow any authenticated user to seed
     // In production, you'd check for admin role
 
-    const results = {
+    const results: {
+      category: null | { status: string; id: string };
+      tools: any[];
+      errors: any[];
+    } = {
       category: null,
       tools: [],
       errors: []
@@ -199,7 +203,7 @@ export async function GET(request: NextRequest) {
     // Calculate some statistics
     const tools = category.tools || []
     const avgScore = tools.length > 0 
-      ? tools.reduce((sum, tool) => sum + (tool.scores?.overall_score || 0), 0) / tools.length 
+      ? tools.reduce((sum, tool) => sum + ((tool as any).scores?.overall_score || 0), 0) / tools.length 
       : 0
 
     const totalReviews = tools.reduce((sum, tool) => sum + (tool.reviews?.length || 0), 0)

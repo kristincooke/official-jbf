@@ -163,7 +163,7 @@ export default function AIInsightsPage() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-green-600">
-                {(insights?.sentimentInsights.overall_sentiment * 100).toFixed(1)}%
+                {(insights?.sentimentInsights?.overall_sentiment ? (insights.sentimentInsights.overall_sentiment * 100).toFixed(1) : '0')}%
               </div>
               <p className="text-xs text-muted-foreground">
                 Community satisfaction score

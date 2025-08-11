@@ -4,15 +4,16 @@ import { createClient } from '@/lib/supabase-server'
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params
   try {
     const supabase = await createClient()
     
     // Check if user is authenticated (optional - scoring can be public)
     const { data: { user } } = await supabase.auth.getUser()
     
-    const toolId = params.id
+    const toolId = id
 
     if (!toolId) {
       return NextResponse.json({ error: 'Tool ID is required' }, { status: 400 })
@@ -34,11 +35,12 @@ export async function POST(
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params
   try {
     const supabase = await createClient()
-    const toolId = params.id
+    const toolId = id
 
     if (!toolId) {
       return NextResponse.json({ error: 'Tool ID is required' }, { status: 400 })

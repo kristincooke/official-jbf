@@ -3,19 +3,20 @@ import { createClient } from '@/lib/supabase-server'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ReviewForm } from '@/components/review-form'
+import ReviewForm from '@/components/review-form'
 import { AIToolEnhancer } from '@/components/ai-tool-enhancer'
 import { SmartRecommendations } from '@/components/smart-recommendations'
 import { SentimentAnalysis } from '@/components/sentiment-analysis'
 import { ExternalLink, Github, Star, Users, Calendar, BarChart3 } from 'lucide-react'
 
 interface ToolDetailPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
+  const { id } = await params
   const supabase = await createClient()
 
   // Fetch tool details with related data
@@ -41,7 +42,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
         user_id
       )
     `)
-    .eq('id', params.id)
+    .eq('id', id)
     .single()
 
   if (error || !tool) {

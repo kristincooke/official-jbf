@@ -192,5 +192,3 @@ export default function ReviewForm({ toolId, onReviewSubmitted }: ReviewFormProp
     </div>
   )
 }
-
-export default ReviewForm

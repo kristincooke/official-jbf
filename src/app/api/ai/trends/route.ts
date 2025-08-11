@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
       limit = 10
     } = body
 
-    let trendData = []
+    let trendData: any[] = []
 
     switch (analysis_type) {
       case 'category_trends':
@@ -210,7 +210,7 @@ export async function GET(request: NextRequest) {
           : 0
         const daysSinceCreated = Math.max(1, Math.floor((Date.now() - new Date(tool.created_at).getTime()) / (24 * 60 * 60 * 1000)))
         
-        const hotScore = (reviewCount / daysSinceCreated) * avgRating * (tool.scores?.overall_score || 0.5)
+        const hotScore = (reviewCount / daysSinceCreated) * avgRating * ((tool as any).scores?.overall_score || 0.5)
 
         return {
           ...tool,

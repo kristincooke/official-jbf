@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
 
         const userHistoryData = {
           viewed_tools: user_history?.viewed_tools || [],
-          rated_tools: userReviews?.map(r => ({
+          rated_tools: userReviews?.map((r: any) => ({
             tool_name: r.tool?.name || '',
             rating: r.rating
           })) || []

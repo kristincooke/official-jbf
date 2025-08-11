@@ -8,16 +8,14 @@ import ToolCard from '@/components/tool-card'
 import { 
   Users, 
   Zap, 
-  Star, 
   ExternalLink, 
   Github,
-  Palette,
   Code,
-  MessageSquare,
   BarChart3,
   Workflow,
   Brain,
-  Sparkles
+  Sparkles,
+  Plus
 } from 'lucide-react'
 import Link from 'next/link'
 
