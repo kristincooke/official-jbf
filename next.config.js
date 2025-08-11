@@ -6,23 +6,9 @@ const nextConfig = {
   },
   images: {
     domains: ['cdn.worldvectorlogo.com', 'supabase.com', 'github.com'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.worldvectorlogo.com',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.supabase.co',
-      },
-    ],
   },
   poweredByHeader: false,
   reactStrictMode: true,
-  // Ensure API routes work properly on Vercel
-  experimental: {
-    serverComponentsExternalPackages: ['@supabase/supabase-js']
-  }
 }
 
 module.exports = nextConfig
