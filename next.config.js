@@ -17,9 +17,12 @@ const nextConfig = {
       },
     ],
   },
-  output: 'standalone',
   poweredByHeader: false,
   reactStrictMode: true,
+  // Ensure API routes work properly on Vercel
+  experimental: {
+    serverComponentsExternalPackages: ['@supabase/supabase-js']
+  }
 }
 
 module.exports = nextConfig

@@ -1,24 +1,7 @@
 {
   "version": 2,
-  "framework": "nextjs",
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev",
   "env": {
     "NEXT_PUBLIC_SUPABASE_URL": "https://wnozfsrbbpfdkpzpzppi.supabase.co",
     "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indub3pmc3JiYnBmZGtwenB6cHBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4ODEyMTIsImV4cCI6MjA3MDQ1NzIxMn0.09g8VFyhez-60_X3ne6yuY0diFD_kPlabsJQREfXkBI"
-  },
-  "functions": {
-    "src/app/api/**/*.ts": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "regions": ["iad1"],
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ]
+  }
 }
