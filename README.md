@@ -2,6 +2,8 @@
 
 The definitive platform for discovering, comparing, and reviewing top-tier development tools. Like "Product Hunt meets Stack Overflow for dev tools."
 
+**🔥 Now with Product Team Collaboration AI tools and live Supabase database!**
+
 ## 🌟 Features
 
 - **Smart Tool Discovery**: Browse and search through curated developer tools
