@@ -1,4 +1,6 @@
-# JuiceBox Factory 🚀
+# JuiceBox Factory
+
+<!-- Force Vercel re-detection --> 🚀
 
 The definitive platform for discovering, comparing, and reviewing top-tier development tools. Like "Product Hunt meets Stack Overflow for dev tools."
 
